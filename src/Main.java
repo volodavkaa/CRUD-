@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Main {
 
-    // Клас, що описує Genre
+
     static class Genre {
         int id;
         String name;
@@ -15,7 +15,7 @@ public class Main {
         }
     }
 
-    // Список для зберігання жанрів та змінна для автоматичного інкременту id
+
     static List<Genre> genres = new ArrayList<>();
     static int nextId = 1;
 
@@ -32,7 +32,7 @@ public class Main {
             System.out.println("5. Вихід");
             System.out.print("Виберіть дію: ");
             choice = scanner.nextInt();
-            scanner.nextLine(); // споживаємо символ нового рядка
+            scanner.nextLine();
 
             switch (choice) {
                 case 1:
@@ -59,7 +59,7 @@ public class Main {
         scanner.close();
     }
 
-    // Метод для створення нового жанру
+
     static void createGenre(Scanner scanner) {
         System.out.print("Введіть назву жанру: ");
         String name = scanner.nextLine();
@@ -68,7 +68,7 @@ public class Main {
         System.out.println("Жанр створено: " + newGenre.id + " - " + newGenre.name);
     }
 
-    // Метод для виведення всіх жанрів
+
     static void readGenres() {
         if (genres.isEmpty()) {
             System.out.println("Жанри відсутні.");
@@ -80,11 +80,11 @@ public class Main {
         }
     }
 
-    // Метод для оновлення жанру
+
     static void updateGenre(Scanner scanner) {
         System.out.print("Введіть id жанру для оновлення: ");
         int id = scanner.nextInt();
-        scanner.nextLine(); // споживаємо символ нового рядка
+        scanner.nextLine();
         Genre genreToUpdate = null;
         for (Genre g : genres) {
             if (g.id == id) {
@@ -102,11 +102,11 @@ public class Main {
         System.out.println("Жанр оновлено: " + genreToUpdate.id + " - " + genreToUpdate.name);
     }
 
-    // Метод для видалення жанру
+
     static void deleteGenre(Scanner scanner) {
         System.out.print("Введіть id жанру для видалення: ");
         int id = scanner.nextInt();
-        scanner.nextLine(); // споживаємо символ нового рядка
+        scanner.nextLine();
         Genre genreToRemove = null;
         for (Genre g : genres) {
             if (g.id == id) {
